@@ -1,10 +1,18 @@
 import instance from '@/instance/api';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if(token){
+      window.location.href = '/produtos'
+    }
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +22,10 @@ export default function Home() {
           password:password
         })
 
-        alert('Login realizado com sucesso!');
+        //Salvar o token no localStorage
+        await localStorage.setItem('token', response.data.token)
+
+        window.location.href = './produtos'
     } catch (error) {
       console.log(error)
     }
