@@ -25,7 +25,7 @@ export default function Home() {
         //Salvar o token no localStorage
         await localStorage.setItem('token', response.data.token)
 
-        window.location.href = './produtos'
+        window.location.href = '/produtos'
     } catch (error) {
       console.log(error)
     }
@@ -65,7 +65,9 @@ export default function Home() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none relative block w-full pl-10 pr-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm transition-colors"
+                  className="appearance-none relative block w-full pl-10 pr-3 py-3 border border-gray-300 
+                  placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none 
+                  focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm transition-colors"
                   placeholder="Digite seu email"
                 />
               </div>
@@ -88,7 +90,9 @@ export default function Home() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none relative block w-full pl-10 pr-12 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm transition-colors"
+                  className="appearance-none relative block w-full pl-10 pr-12 py-3 border border-gray-300 
+                  placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 
+                  focus:border-indigo-500 focus:z-10 sm:text-sm transition-colors"
                   placeholder="Digite sua senha"
                 />
                 <button
